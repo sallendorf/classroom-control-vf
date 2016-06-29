@@ -55,4 +55,7 @@ node default {
 #    path => '/usr/local/bin',
 #    creates => '/etc/motd',
 #  }
+  if ($::virtual != 'physical') {
+     notify { "This is a capitalize(${::virtual}) virtual machine": }
+  }
 }
