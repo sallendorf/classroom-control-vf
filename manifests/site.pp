@@ -57,6 +57,6 @@ node default {
 #  }
   if ($::virtual != 'physical') {
      $vmstring = capitalize($::virtual)
-     notify { "This is a $vmstring virtual machine": }
+     notify { "This is a ${vmstring} virtual machine!": }
   }
 }
