@@ -61,6 +61,6 @@ node default {
      notify { "This is a ${capitalize($::virtual)} virtual machine!": }
   }
   
-  $mymessage = hiera('message')
-  notify { $mymessage: }
+#  $mymessage = hiera('message')
+  notify { hiera('message'): }
 }
