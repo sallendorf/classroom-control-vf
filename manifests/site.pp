@@ -56,7 +56,8 @@ node default {
 #    creates => '/etc/motd',
 #  }
   if ($::virtual != 'physical') {
-     $vmstring = capitalize($::virtual)
-     notify { "This is a ${vmstring} virtual machine!": }
+#     $vmstring = capitalize($::virtual)
+#     notify { "This is a ${vmstring} virtual machine!": }
+     notify { "This is a ${capitalize($::virtual)} virtual machine!": }
   }
 }
