@@ -23,7 +23,7 @@ class nginx {
     }
   }
   
-  svcuser = $::osfamily ? {
+  $svcuser = $::osfamily ? {
     'redhat'  => 'nginx',
     'debian'  => 'www-data',
     'windows' => 'nobody',
