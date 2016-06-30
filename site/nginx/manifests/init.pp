@@ -32,7 +32,7 @@ class nginx {
   File {
     owner => 'root',
     group => 'root',
-    mode => '0644',
+    mode  => '0644',
   }
 
   package {$pkgname:
@@ -50,16 +50,16 @@ class nginx {
   
   file {"${configdir}/nginx.conf":
     ensure  => file,
-    source  => 'puppet:///modules/nginx/nginx.conf',
+    content => template('nginx/nginx.conf.erb'),
     require => Package[$pkgname],
-    notify => Service['nginx'],
+    notify  => Service['nginx'],
   }
   
   file {"${configdir}/conf.d/default.conf":
     ensure  => file,
-    source  => 'puppet:///modules/nginx/default.conf',
+    content => template('nginx/default.conf.erb'),
     require => Package[$pkgname],
-    notify => Service['nginx'],
+    notify  => Service['nginx'],
   }
   
   service {'nginx':
