@@ -60,4 +60,7 @@ node default {
 #     notify { "This is a ${vmstring} virtual machine!": }
      notify { "This is a ${capitalize($::virtual)} virtual machine!": }
   }
+  
+  $mymessage = hiera('message')
+  notify { $mymessage: }
 }
