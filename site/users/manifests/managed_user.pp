@@ -6,7 +6,7 @@ define users::managed_user (
     gid    => $group,
   }
 
-  group { group_$title:
+  group { "group_${title}":
     ensure => present,
     name => $group,
   }
