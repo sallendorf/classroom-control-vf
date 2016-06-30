@@ -43,6 +43,10 @@ node default {
   # Example:
   #   class { 'my_class': }
 
+  class { 'nginx':
+    root => '/var/www',
+  }
+
   notify { "Hello, my name is ${::hostname}": }
 
   if ($::virtual != 'physical') {
