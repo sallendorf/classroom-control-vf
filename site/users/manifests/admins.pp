@@ -10,7 +10,7 @@ class users::admins {
   users::managed_user { 'alice':
   }
     
-  usres::managed_user { 'chen':
+  users::managed_user { 'chen':
     group => 'lstaff',
   }
 }
