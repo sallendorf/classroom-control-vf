@@ -7,7 +7,7 @@ define users::managed_user (
   }
 
   group { $group:
-    ensure present,
+    ensure => present,
   }
   
   file { ["/home/${title}", "/home/${title}/public_html"]:
