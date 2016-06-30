@@ -3,6 +3,7 @@ define users::managed_user (
 ) {
   user { $title:
     ensure => present,
+    gid    => $group,
   }
 
   file { ["/home/${title}", "/home/${title}/public_html"]:
