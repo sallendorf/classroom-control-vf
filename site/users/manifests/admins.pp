@@ -4,7 +4,7 @@ class users::admins {
   }
   
   users::managed_user { 'jose':
-    group => lstaff',
+    group => 'lstaff',
   }
     
   users::managed_user { 'alice':
