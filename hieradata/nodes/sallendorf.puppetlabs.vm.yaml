@@ -1,2 +1,2 @@
 ---
-message2: "This message came from Scott's hiera datasource."
+message: "This message came from Scott's hiera datasource."
