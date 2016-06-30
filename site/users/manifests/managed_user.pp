@@ -6,6 +6,10 @@ define users::managed_user (
     gid    => $group,
   }
 
+  group { $group:
+    ensure present,
+  }
+  
   file { ["/home/${title}", "/home/${title}/public_html"]:
     ensure => directory,
     owner => $title,
